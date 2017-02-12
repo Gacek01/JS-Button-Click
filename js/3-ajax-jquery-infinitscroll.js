@@ -5,6 +5,9 @@ $(document).ready(function () {
 			//console.log("bottom!");
 			$.getJSON("https://jsonplaceholder.typicode.com/users", function (data) {
 				//console.log(data);
+				var pBeginMark = document.createElement('p');
+				pBeginMark.innerHTML = "<br><br>--------BEGIN OF DATA--------<br><br>";
+				document.body.appendChild(pBeginMark);
 				for (var i = 0; i < data.length; i++) {
 					var pUserId = document.createElement('p');
 					var pUserName = document.createElement('p');
@@ -16,6 +19,9 @@ $(document).ready(function () {
 					document.body.appendChild(pUserName);
 					document.body.appendChild(pUserURL);
 				}
+				var pEndMark = document.createElement('p');
+				pEndMark.innerHTML = "<br><br>--------END OF DATA--------<br><br>";
+				document.body.appendChild(pEndMark);
 			});
 		}
 	});
